@@ -1,6 +1,6 @@
 ## Multi-Modal Early Disease Detection System
 
-### Problem Statement
+### Motivation
 Early detection of chronic diseases like diabetes, heart disease, and stroke is crucial for saving lives and reducing healthcare costs. Current diagnostic methods often require expensive tests and may miss early warning signs. Our system will create an AI-powered early detection platform that combines multiple accessible health indicators to predict disease risk.
 
 With earlier detection and intervention, people can empower themselves to take charge of their own health before things deteriorate. Knowledge is powerful when it comes to your health.
