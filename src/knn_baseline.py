@@ -39,17 +39,25 @@ def load_and_preprocess_data(filepath='../datasets/diabetes.csv'):
     df = pd.read_csv(filepath, names=column_names, header=None)
     print(f"  Loaded {len(df)} samples with {len(df.columns)-1} features")
     
-    # Step 2: Select 6 features (drop Insulin and SkinThickness)
-    print("\n2. Selecting 6 features (dropping Insulin and SkinThickness)")
-    features_to_use = ['Pregnancies', 'Glucose', 'BloodPressure', 'BMI', 
-                       'DiabetesPedigreeFunction', 'Age']
-    
+    # Step 2: Drop rows where SkinThickness == 0 OR Insulin == 0, then use ALL 8 features
+    print("\n2. Dropping rows where SkinThickness==0 OR Insulin==0, then selecting ALL 8 features")
+    before = len(df)
+    df = df[(df['SkinThickness'] != 0) & (df['Insulin'] != 0)].copy()
+    dropped = before - len(df)
+    if dropped > 0:
+        print(f"  Dropped {dropped} samples with zero SkinThickness/Insulin")
+
+    features_to_use = [
+        'Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness',
+        'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age'
+    ]
+
     X = df[features_to_use].copy()
     y = df['Outcome'].values
-    
+
     print(f"  Selected features: {features_to_use}")
     print(f"  Shape: {X.shape}")
-    
+
     # Step 3: Handle missing values (zeros in medical features)
     print("\n3. Handling missing values")
     cannot_be_zero = ['Glucose', 'BloodPressure', 'BMI']
@@ -64,13 +72,14 @@ def load_and_preprocess_data(filepath='../datasets/diabetes.csv'):
     # Step 4: Standardize features (except Pregnancies)
     print("\n4. Standardizing features")
     scaler = StandardScaler()
-    
-    # Standardize all features except Pregnancies
-    features_to_standardize = ['Glucose', 'BloodPressure', 'BMI', 
-                               'DiabetesPedigreeFunction', 'Age']
-    
+
+    features_to_standardize = [
+        'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin',
+        'BMI', 'DiabetesPedigreeFunction', 'Age'
+    ]
+
     X[features_to_standardize] = scaler.fit_transform(X[features_to_standardize])
-    
+
     print(f"  Standardized {len(features_to_standardize)} features")
     print(f"  Pregnancies kept as raw count")
     
@@ -241,7 +250,7 @@ def main():
     print("="*70)
     
     # Step 1: Load and preprocess
-    X, y, scaler, feature_names = load_and_preprocess_data('../datasets/diabetes.csv')
+    X, y, scaler, feature_names = load_and_preprocess_data('datasets/diabetes.csv')
     
     # Step 2: Train/test split
     print("\n" + "="*70)
