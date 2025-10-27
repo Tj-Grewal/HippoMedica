@@ -88,8 +88,11 @@ def standardize_features(features, feature_names):
         stds: d x 1 array of standard deviations
     """
     # Features to standardize (not count variables like Pregnancies)
-    to_standardize = ['Glucose', 'BMI', 'Age', 'DiabetesPedigreeFunction', 'BloodPressure']
-    
+    to_standardize = [
+        'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin',
+        'BMI', 'DiabetesPedigreeFunction', 'Age'
+    ]
+
     standardized = features.copy()
     means = np.mean(features, axis=1, keepdims=True)  # d x 1
     stds = np.std(features, axis=1, keepdims=True)    # d x 1
@@ -107,7 +110,7 @@ def preprocess_diabetes_data(filepath='datasets/diabetes.csv'):
     Complete preprocessing pipeline
     
     Returns:
-        X: d x n array of preprocessed features (6 x n)
+        X: d x n array of preprocessed features (8 x n)
         y: 1 x n array of labels
         feature_names: list of selected feature names
         means: means for standardization
@@ -121,24 +124,34 @@ def preprocess_diabetes_data(filepath='datasets/diabetes.csv'):
     print("\n1. Loading data...")
     all_features, labels = load_diabetes_data(filepath)
     
-    # Step 2: Select 6 features (drop Insulin and SkinThickness)
-    print("\n2. Selecting 6 features (dropping Insulin and SkinThickness)...")
-    # Original order: Pregnancies(0), Glucose(1), BloodPressure(2), SkinThickness(3), 
-    #                 Insulin(4), BMI(5), DiabetesPedigreeFunction(6), Age(7)
-    # Keep: 0, 1, 2, 5, 6, 7
-    selected_indices = [0, 1, 2, 5, 6, 7]
-    feature_names = ['Pregnancies', 'Glucose', 'BloodPressure', 'BMI', 'DiabetesPedigreeFunction', 'Age']
-    
+    # Step 2: Drop samples with SkinThickness==0 or Insulin==0
+    # Indices: 0 Pregnancies, 1 Glucose, 2 BloodPressure, 3 SkinThickness,
+    #          4 Insulin, 5 BMI, 6 DiabetesPedigreeFunction, 7 Age
+    print("\n2. Dropping rows where SkinThickness==0 OR Insulin==0 ...")
+    valid_mask = (all_features[3, :] != 0) & (all_features[4, :] != 0)
+    dropped = all_features.shape[1] - np.sum(valid_mask)
+    if dropped > 0:
+        print(f"  Dropped {dropped} samples")
+    all_features = all_features[:, valid_mask]
+    labels = labels[:, valid_mask]
+
+    # Step 3: Select ALL 8 features (including SkinThickness & Insulin)
+    print("\n3. Selecting ALL 8 features (including SkinThickness & Insulin)...")
+    selected_indices = [0, 1, 2, 3, 4, 5, 6, 7]
+    feature_names = [
+        'Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness',
+        'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age'
+    ]
     X = select_features(all_features, selected_indices)
     print(f"  Selected features: {feature_names}")
     print(f"  Shape: {X.shape[0]} features x {X.shape[1]} samples")
-    
-    # Step 3: Handle missing values
-    print("\n3. Handling missing values...")
+
+    # Step 4: Handle missing values
+    print("\n4. Handling missing values...")
     X = handle_missing_values(X, feature_names)
     
-    # Step 4: Standardize features
-    print("\n4. Standardizing features...")
+    # Step 5: Standardize features
+    print("\n5. Standardizing features...")
     X, means, stds = standardize_features(X, feature_names)
     
     print("\n" + "="*70)
@@ -150,7 +163,7 @@ def preprocess_diabetes_data(filepath='datasets/diabetes.csv'):
 
 # Test the preprocessing
 if __name__ == "__main__":
-    X, y, feature_names, means, stds = preprocess_diabetes_data('diabetes.csv')
+    X, y, feature_names, means, stds = preprocess_diabetes_data('datasets/diabetes.csv')
     print(f"\nFinal preprocessed data shape: {X.shape}")
     print(f"Labels shape: {y.shape}")
     print(f"Features: {feature_names}")
