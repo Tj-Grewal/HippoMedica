@@ -1,0 +1,18 @@
+PREPROCESSING SUMMARY - DIABETES
+================================================================================
+
+Original rows: 768
+Processed rows: 387
+Original features: 8
+Processed features: 8
+
+Final Columns:
+   - Pregnancies
+   - Glucose
+   - BloodPressure
+   - SkinThickness
+   - Insulin
+   - BMI
+   - DiabetesPedigreeFunction
+   - Age
+   - Outcome

@@ -1,0 +1,41 @@
+================================================================================
+MODEL TRAINING SUMMARY - STROKE
+================================================================================
+
+Dataset: stroke_processed.csv
+Training samples: 7756
+Testing samples: 1940
+Features: 10
+
+Model Performance:
+--------------------------------------------------------------------------------
+
+Random Forest:
+  Accuracy:     0.9680
+  Precision:    0.9652
+  Recall:       0.9711
+  F1-Score:     0.9681
+  ROC-AUC:      0.9956
+  CV Accuracy:  0.9536 (0.0026)
+  Confusion Matrix: TN=936, FP=34, FN=28, TP=942
+
+XGBoost:
+  Accuracy:     0.9510
+  Precision:    0.9260
+  Recall:       0.9804
+  F1-Score:     0.9524
+  ROC-AUC:      0.9927
+  CV Accuracy:  0.9373 (0.0075)
+  Confusion Matrix: TN=894, FP=76, FN=19, TP=951
+
+Neural Network:
+  Accuracy:     0.9247
+  Precision:    0.9055
+  Recall:       0.9485
+  F1-Score:     0.9265
+  ROC-AUC:      0.9755
+  CV Accuracy:  0.9162 (0.0055)
+  Confusion Matrix: TN=874, FP=96, FN=50, TP=920
+
+Best Model: Random Forest
+Accuracy: 0.9680

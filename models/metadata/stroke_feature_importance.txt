@@ -1,0 +1,30 @@
+================================================================================
+FEATURE IMPORTANCE ANALYSIS - STROKE
+================================================================================
+
+Random Forest:
+--------------------------------------------------
+   1. age                            0.370233
+   2. hypertension                   0.149084
+   3. avg_glucose_level              0.147853
+   4. bmi                            0.117719
+   5. heart_disease                  0.084294
+   6. work_type                      0.041699
+   7. smoking_status                 0.032099
+   8. ever_married                   0.028091
+   9. gender                         0.015230
+  10. Residence_type                 0.013699
+
+XGBoost:
+--------------------------------------------------
+   1. hypertension                   0.236550
+   2. age                            0.222939
+   3. heart_disease                  0.211927
+   4. work_type                      0.063141
+   5. avg_glucose_level              0.052903
+   6. smoking_status                 0.049225
+   7. bmi                            0.047809
+   8. ever_married                   0.044243
+   9. gender                         0.040714
+  10. Residence_type                 0.030549
+

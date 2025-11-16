@@ -1,0 +1,70 @@
+{
+  "Random Forest": [
+    {
+      "feature": "Glucose",
+      "importance": 0.25784389192869717
+    },
+    {
+      "feature": "Insulin",
+      "importance": 0.17160402150744014
+    },
+    {
+      "feature": "Age",
+      "importance": 0.15411330036574078
+    },
+    {
+      "feature": "BMI",
+      "importance": 0.11168641734852985
+    },
+    {
+      "feature": "DiabetesPedigreeFunction",
+      "importance": 0.09687140917545205
+    },
+    {
+      "feature": "SkinThickness",
+      "importance": 0.08097045417500806
+    },
+    {
+      "feature": "Pregnancies",
+      "importance": 0.0634875886641317
+    },
+    {
+      "feature": "BloodPressure",
+      "importance": 0.06342291683500016
+    }
+  ],
+  "XGBoost": [
+    {
+      "feature": "Glucose",
+      "importance": 0.2866504192352295
+    },
+    {
+      "feature": "Age",
+      "importance": 0.15908345580101013
+    },
+    {
+      "feature": "Insulin",
+      "importance": 0.12830065190792084
+    },
+    {
+      "feature": "SkinThickness",
+      "importance": 0.09047092497348785
+    },
+    {
+      "feature": "BloodPressure",
+      "importance": 0.08919944614171982
+    },
+    {
+      "feature": "DiabetesPedigreeFunction",
+      "importance": 0.08650894463062286
+    },
+    {
+      "feature": "BMI",
+      "importance": 0.08594392240047455
+    },
+    {
+      "feature": "Pregnancies",
+      "importance": 0.07384227216243744
+    }
+  ]
+}

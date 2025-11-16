@@ -1,0 +1,59 @@
+================================================================================
+MODEL PERFORMANCE SUMMARY - HEART_DISEASE
+================================================================================
+
+Random Forest:
+--------------------------------------------------
+  Accuracy:     0.8689 (86.89%)
+  Precision:    0.8125
+  Recall:       0.9286
+  F1-Score:     0.8667
+  ROC-AUC:      0.9556
+  CV Accuracy:  0.8097 (0.0221)
+  Sensitivity:  0.9286
+  Specificity:  0.8182
+
+  Confusion Matrix:
+    True Negatives:  27
+    False Positives: 6
+    False Negatives: 2
+    True Positives:  26
+
+XGBoost:
+--------------------------------------------------
+  Accuracy:     0.8361 (83.61%)
+  Precision:    0.7647
+  Recall:       0.9286
+  F1-Score:     0.8387
+  ROC-AUC:      0.9232
+  CV Accuracy:  0.7604 (0.0204)
+  Sensitivity:  0.9286
+  Specificity:  0.7576
+
+  Confusion Matrix:
+    True Negatives:  25
+    False Positives: 8
+    False Negatives: 2
+    True Positives:  26
+
+Neural Network:
+--------------------------------------------------
+  Accuracy:     0.8361 (83.61%)
+  Precision:    0.7812
+  Recall:       0.8929
+  F1-Score:     0.8333
+  ROC-AUC:      0.9361
+  CV Accuracy:  0.7441 (0.0617)
+  Sensitivity:  0.8929
+  Specificity:  0.7879
+
+  Confusion Matrix:
+    True Negatives:  26
+    False Positives: 7
+    False Negatives: 3
+    True Positives:  25
+
+================================================================================
+BEST MODEL: Random Forest
+Accuracy: 0.8689
+================================================================================

@@ -1,0 +1,41 @@
+================================================================================
+MODEL TRAINING SUMMARY - HEART_DISEASE
+================================================================================
+
+Dataset: heart_disease_processed.csv
+Training samples: 242
+Testing samples: 61
+Features: 13
+
+Model Performance:
+--------------------------------------------------------------------------------
+
+Random Forest:
+  Accuracy:     0.8689
+  Precision:    0.8125
+  Recall:       0.9286
+  F1-Score:     0.8667
+  ROC-AUC:      0.9556
+  CV Accuracy:  0.8097 (0.0221)
+  Confusion Matrix: TN=27, FP=6, FN=2, TP=26
+
+XGBoost:
+  Accuracy:     0.8361
+  Precision:    0.7647
+  Recall:       0.9286
+  F1-Score:     0.8387
+  ROC-AUC:      0.9232
+  CV Accuracy:  0.7604 (0.0204)
+  Confusion Matrix: TN=25, FP=8, FN=2, TP=26
+
+Neural Network:
+  Accuracy:     0.8361
+  Precision:    0.7812
+  Recall:       0.8929
+  F1-Score:     0.8333
+  ROC-AUC:      0.9361
+  CV Accuracy:  0.7441 (0.0617)
+  Confusion Matrix: TN=26, FP=7, FN=3, TP=25
+
+Best Model: Random Forest
+Accuracy: 0.8689

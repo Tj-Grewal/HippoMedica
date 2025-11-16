@@ -1,0 +1,110 @@
+{
+  "Random Forest": [
+    {
+      "feature": "thal",
+      "importance": 0.16909267670710815
+    },
+    {
+      "feature": "cp",
+      "importance": 0.13329909115953045
+    },
+    {
+      "feature": "ca",
+      "importance": 0.11723741663734753
+    },
+    {
+      "feature": "thalach",
+      "importance": 0.11578529839842742
+    },
+    {
+      "feature": "oldpeak",
+      "importance": 0.08949860504302747
+    },
+    {
+      "feature": "age",
+      "importance": 0.07843300153376762
+    },
+    {
+      "feature": "chol",
+      "importance": 0.06783958836727923
+    },
+    {
+      "feature": "trestbps",
+      "importance": 0.05973046580757174
+    },
+    {
+      "feature": "exang",
+      "importance": 0.05639846013898296
+    },
+    {
+      "feature": "slope",
+      "importance": 0.04355654390840314
+    },
+    {
+      "feature": "sex",
+      "importance": 0.04277605410480638
+    },
+    {
+      "feature": "restecg",
+      "importance": 0.019100356256162795
+    },
+    {
+      "feature": "fbs",
+      "importance": 0.007252441937585163
+    }
+  ],
+  "XGBoost": [
+    {
+      "feature": "thal",
+      "importance": 0.36891475319862366
+    },
+    {
+      "feature": "ca",
+      "importance": 0.12848171591758728
+    },
+    {
+      "feature": "cp",
+      "importance": 0.09796158224344254
+    },
+    {
+      "feature": "sex",
+      "importance": 0.060336705297231674
+    },
+    {
+      "feature": "oldpeak",
+      "importance": 0.04385409504175186
+    },
+    {
+      "feature": "slope",
+      "importance": 0.041347526013851166
+    },
+    {
+      "feature": "thalach",
+      "importance": 0.040197648108005524
+    },
+    {
+      "feature": "chol",
+      "importance": 0.039997272193431854
+    },
+    {
+      "feature": "age",
+      "importance": 0.03898194059729576
+    },
+    {
+      "feature": "exang",
+      "importance": 0.038969531655311584
+    },
+    {
+      "feature": "fbs",
+      "importance": 0.038701850920915604
+    },
+    {
+      "feature": "trestbps",
+      "importance": 0.03800307214260101
+    },
+    {
+      "feature": "restecg",
+      "importance": 0.024252325296401978
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+================================================================================
+MODEL PERFORMANCE SUMMARY - DIABETES
+================================================================================
+
+Random Forest:
+--------------------------------------------------
+  Accuracy:     0.7821 (78.21%)
+  Precision:    0.7143
+  Recall:       0.5769
+  F1-Score:     0.6383
+  ROC-AUC:      0.8336
+  CV Accuracy:  0.7701 (0.0529)
+  Sensitivity:  0.5769
+  Specificity:  0.8846
+
+  Confusion Matrix:
+    True Negatives:  46
+    False Positives: 6
+    False Negatives: 11
+    True Positives:  15
+
+XGBoost:
+--------------------------------------------------
+  Accuracy:     0.7564 (75.64%)
+  Precision:    0.6400
+  Recall:       0.6154
+  F1-Score:     0.6275
+  ROC-AUC:      0.8299
+  CV Accuracy:  0.7635 (0.0669)
+  Sensitivity:  0.6154
+  Specificity:  0.8269
+
+  Confusion Matrix:
+    True Negatives:  43
+    False Positives: 9
+    False Negatives: 10
+    True Positives:  16
+
+Neural Network:
+--------------------------------------------------
+  Accuracy:     0.7436 (74.36%)
+  Precision:    0.6364
+  Recall:       0.5385
+  F1-Score:     0.5833
+  ROC-AUC:      0.7729
+  CV Accuracy:  0.7152 (0.0748)
+  Sensitivity:  0.5385
+  Specificity:  0.8462
+
+  Confusion Matrix:
+    True Negatives:  44
+    False Positives: 8
+    False Negatives: 12
+    True Positives:  14
+
+================================================================================
+BEST MODEL: Random Forest
+Accuracy: 0.7821
+================================================================================
