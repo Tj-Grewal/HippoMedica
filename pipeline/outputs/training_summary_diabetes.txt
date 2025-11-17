@@ -1,0 +1,41 @@
+================================================================================
+MODEL TRAINING SUMMARY - DIABETES
+================================================================================
+
+Dataset: diabetes_processed.csv
+Training samples: 309
+Testing samples: 78
+Features: 8
+
+Model Performance:
+--------------------------------------------------------------------------------
+
+Random Forest:
+  Accuracy:     0.7821
+  Precision:    0.7143
+  Recall:       0.5769
+  F1-Score:     0.6383
+  ROC-AUC:      0.8336
+  CV Accuracy:  0.7701 (0.0529)
+  Confusion Matrix: TN=46, FP=6, FN=11, TP=15
+
+XGBoost:
+  Accuracy:     0.7564
+  Precision:    0.6400
+  Recall:       0.6154
+  F1-Score:     0.6275
+  ROC-AUC:      0.8299
+  CV Accuracy:  0.7635 (0.0669)
+  Confusion Matrix: TN=43, FP=9, FN=10, TP=16
+
+Neural Network:
+  Accuracy:     0.7436
+  Precision:    0.6364
+  Recall:       0.5385
+  F1-Score:     0.5833
+  ROC-AUC:      0.7729
+  CV Accuracy:  0.7152 (0.0748)
+  Confusion Matrix: TN=44, FP=8, FN=12, TP=14
+
+Best Model: Random Forest
+Accuracy: 0.7821

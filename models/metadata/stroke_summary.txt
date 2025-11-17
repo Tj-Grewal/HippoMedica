@@ -1,0 +1,59 @@
+================================================================================
+MODEL PERFORMANCE SUMMARY - STROKE
+================================================================================
+
+Random Forest:
+--------------------------------------------------
+  Accuracy:     0.9680 (96.80%)
+  Precision:    0.9652
+  Recall:       0.9711
+  F1-Score:     0.9681
+  ROC-AUC:      0.9956
+  CV Accuracy:  0.9536 (0.0026)
+  Sensitivity:  0.9711
+  Specificity:  0.9649
+
+  Confusion Matrix:
+    True Negatives:  936
+    False Positives: 34
+    False Negatives: 28
+    True Positives:  942
+
+XGBoost:
+--------------------------------------------------
+  Accuracy:     0.9510 (95.10%)
+  Precision:    0.9260
+  Recall:       0.9804
+  F1-Score:     0.9524
+  ROC-AUC:      0.9927
+  CV Accuracy:  0.9373 (0.0075)
+  Sensitivity:  0.9804
+  Specificity:  0.9216
+
+  Confusion Matrix:
+    True Negatives:  894
+    False Positives: 76
+    False Negatives: 19
+    True Positives:  951
+
+Neural Network:
+--------------------------------------------------
+  Accuracy:     0.9247 (92.47%)
+  Precision:    0.9055
+  Recall:       0.9485
+  F1-Score:     0.9265
+  ROC-AUC:      0.9755
+  CV Accuracy:  0.9162 (0.0055)
+  Sensitivity:  0.9485
+  Specificity:  0.9010
+
+  Confusion Matrix:
+    True Negatives:  874
+    False Positives: 96
+    False Negatives: 50
+    True Positives:  920
+
+================================================================================
+BEST MODEL: Random Forest
+Accuracy: 0.9680
+================================================================================

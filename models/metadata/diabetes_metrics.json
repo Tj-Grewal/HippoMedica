@@ -1,0 +1,53 @@
+{
+  "Random Forest": {
+    "accuracy": 0.782051282051282,
+    "precision": 0.7142857142857143,
+    "recall": 0.5769230769230769,
+    "f1_score": 0.6382978723404256,
+    "roc_auc": 0.8335798816568047,
+    "cv_mean": 0.7701216287678476,
+    "cv_std": 0.05290681599890119,
+    "confusion_matrix": {
+      "true_negatives": 46,
+      "false_positives": 6,
+      "false_negatives": 11,
+      "true_positives": 15
+    },
+    "sensitivity": 0.5769230769230769,
+    "specificity": 0.8846153846153846
+  },
+  "XGBoost": {
+    "accuracy": 0.7564102564102564,
+    "precision": 0.64,
+    "recall": 0.6153846153846154,
+    "f1_score": 0.6274509803921569,
+    "roc_auc": 0.8298816568047337,
+    "cv_mean": 0.7635113696456901,
+    "cv_std": 0.06689897844455665,
+    "confusion_matrix": {
+      "true_negatives": 43,
+      "false_positives": 9,
+      "false_negatives": 10,
+      "true_positives": 16
+    },
+    "sensitivity": 0.6153846153846154,
+    "specificity": 0.8269230769230769
+  },
+  "Neural Network": {
+    "accuracy": 0.7435897435897436,
+    "precision": 0.6363636363636364,
+    "recall": 0.5384615384615384,
+    "f1_score": 0.5833333333333334,
+    "roc_auc": 0.7729289940828402,
+    "cv_mean": 0.7151771549444738,
+    "cv_std": 0.07478923707799912,
+    "confusion_matrix": {
+      "true_negatives": 44,
+      "false_positives": 8,
+      "false_negatives": 12,
+      "true_positives": 14
+    },
+    "sensitivity": 0.5384615384615384,
+    "specificity": 0.8461538461538461
+  }
+}

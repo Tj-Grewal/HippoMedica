@@ -1,0 +1,20 @@
+PREPROCESSING SUMMARY - STROKE
+================================================================================
+
+Original rows: 5110
+Processed rows: 9696
+Original features: 11
+Processed features: 10
+
+Final Columns:
+   - gender
+   - age
+   - hypertension
+   - heart_disease
+   - ever_married
+   - work_type
+   - Residence_type
+   - avg_glucose_level
+   - bmi
+   - smoking_status
+   - stroke

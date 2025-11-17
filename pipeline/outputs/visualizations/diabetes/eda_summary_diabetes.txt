@@ -1,0 +1,23 @@
+================================================================================
+EXPLORATORY DATA ANALYSIS SUMMARY - DIABETES
+================================================================================
+
+Dataset Shape: (768, 9)
+
+Target Distribution:
+   No Diabetes: 500 (65.1%)
+   Diabetes: 268 (34.9%)
+
+Zero Values Analysis:
+   Glucose: 5 zeros (0.7%)
+   BloodPressure: 35 zeros (4.6%)
+   SkinThickness: 227 zeros (29.6%)
+   Insulin: 374 zeros (48.7%)
+   BMI: 11 zeros (1.4%)
+
+Top Correlations with Outcome:
+   Glucose: 0.467
+   BMI: 0.293
+   Age: 0.238
+   Pregnancies: 0.222
+   DiabetesPedigreeFunction: 0.174

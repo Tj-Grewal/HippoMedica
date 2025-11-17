@@ -1,0 +1,86 @@
+{
+  "Random Forest": [
+    {
+      "feature": "age",
+      "importance": 0.3702328526159485
+    },
+    {
+      "feature": "hypertension",
+      "importance": 0.14908360556995467
+    },
+    {
+      "feature": "avg_glucose_level",
+      "importance": 0.1478526973416103
+    },
+    {
+      "feature": "bmi",
+      "importance": 0.11771918808411252
+    },
+    {
+      "feature": "heart_disease",
+      "importance": 0.08429363784250365
+    },
+    {
+      "feature": "work_type",
+      "importance": 0.04169869127418188
+    },
+    {
+      "feature": "smoking_status",
+      "importance": 0.032099224242189174
+    },
+    {
+      "feature": "ever_married",
+      "importance": 0.02809139305066672
+    },
+    {
+      "feature": "gender",
+      "importance": 0.015229729482419784
+    },
+    {
+      "feature": "Residence_type",
+      "importance": 0.013698980496412803
+    }
+  ],
+  "XGBoost": [
+    {
+      "feature": "hypertension",
+      "importance": 0.23655039072036743
+    },
+    {
+      "feature": "age",
+      "importance": 0.22293893992900848
+    },
+    {
+      "feature": "heart_disease",
+      "importance": 0.21192678809165955
+    },
+    {
+      "feature": "work_type",
+      "importance": 0.06314116716384888
+    },
+    {
+      "feature": "avg_glucose_level",
+      "importance": 0.05290311947464943
+    },
+    {
+      "feature": "smoking_status",
+      "importance": 0.04922536015510559
+    },
+    {
+      "feature": "bmi",
+      "importance": 0.04780853912234306
+    },
+    {
+      "feature": "ever_married",
+      "importance": 0.04424267262220383
+    },
+    {
+      "feature": "gender",
+      "importance": 0.04071426764130592
+    },
+    {
+      "feature": "Residence_type",
+      "importance": 0.0305487010627985
+    }
+  ]
+}

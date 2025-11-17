@@ -1,0 +1,26 @@
+================================================================================
+FEATURE IMPORTANCE ANALYSIS - DIABETES
+================================================================================
+
+Random Forest:
+--------------------------------------------------
+   1. Glucose                        0.257844
+   2. Insulin                        0.171604
+   3. Age                            0.154113
+   4. BMI                            0.111686
+   5. DiabetesPedigreeFunction       0.096871
+   6. SkinThickness                  0.080970
+   7. Pregnancies                    0.063488
+   8. BloodPressure                  0.063423
+
+XGBoost:
+--------------------------------------------------
+   1. Glucose                        0.286650
+   2. Age                            0.159083
+   3. Insulin                        0.128301
+   4. SkinThickness                  0.090471
+   5. BloodPressure                  0.089199
+   6. DiabetesPedigreeFunction       0.086509
+   7. BMI                            0.085944
+   8. Pregnancies                    0.073842
+

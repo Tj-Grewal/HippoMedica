@@ -1,0 +1,24 @@
+================================================================================
+EXPLORATORY DATA ANALYSIS SUMMARY - HEART_DISEASE
+================================================================================
+
+Dataset Shape: (303, 14)
+
+Target Distribution:
+   No Heart Disease: 164 (54.1%)
+   Heart Disease: 55 (18.2%)
+   Class 2: 36 (11.9%)
+   Class 3: 35 (11.6%)
+   Class 4: 13 (4.3%)
+
+Zero Values Analysis:
+   trestbps: 0 zeros (0.0%)
+   chol: 0 zeros (0.0%)
+   thalach: 0 zeros (0.0%)
+
+Top Correlations with Outcome:
+   ca: 0.519
+   thal: 0.510
+   oldpeak: 0.504
+   thalach: -0.415
+   cp: 0.407

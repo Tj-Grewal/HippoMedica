@@ -1,0 +1,23 @@
+PREPROCESSING SUMMARY - HEART_DISEASE
+================================================================================
+
+Original rows: 303
+Processed rows: 303
+Original features: 13
+Processed features: 13
+
+Final Columns:
+   - age
+   - sex
+   - cp
+   - trestbps
+   - chol
+   - fbs
+   - restecg
+   - thalach
+   - exang
+   - oldpeak
+   - slope
+   - ca
+   - thal
+   - target

@@ -1,0 +1,10 @@
+Feature Names for DIABETES (in order):
+==================================================
+1. Pregnancies
+2. Glucose
+3. BloodPressure
+4. SkinThickness
+5. Insulin
+6. BMI
+7. DiabetesPedigreeFunction
+8. Age

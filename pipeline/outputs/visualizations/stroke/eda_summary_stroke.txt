@@ -1,0 +1,20 @@
+================================================================================
+EXPLORATORY DATA ANALYSIS SUMMARY - STROKE
+================================================================================
+
+Dataset Shape: (5110, 12)
+
+Target Distribution:
+   No Stroke: 4861 (95.1%)
+   Stroke: 249 (4.9%)
+
+Zero Values Analysis:
+   bmi: 0 zeros (0.0%)
+   avg_glucose_level: 0 zeros (0.0%)
+
+Top Correlations with Outcome:
+   age: 0.245
+   heart_disease: 0.135
+   avg_glucose_level: 0.132
+   hypertension: 0.128
+   bmi: 0.042
