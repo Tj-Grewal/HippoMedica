@@ -92,11 +92,11 @@ Core Functionality
 - Reproducibility: Complete code with documentation and environment setup
  
 #### Expansion Path
-1. Add heart disease and stroke prediction
-2. Implement advanced explainability
-3. Build web interface
-4. Add uncertainty quantification
-5. Integrate multiple data sources
+1. Add heart disease and stroke prediction - Done
+2. Implement advanced explainability - In Progress
+3. Build web interface - Done
+4. Add certainty quantification - Done
+5. Integrate multiple data sources - Done
  
  
 
