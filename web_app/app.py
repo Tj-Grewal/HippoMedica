@@ -115,7 +115,7 @@ def load_trained_models():
             'stroke': {
                 'model': joblib.load(models_dir / 'stroke_random_forest.pkl'),
                 'scaler': joblib.load(scalers_dir / 'stroke_scaler.pkl'),
-                'accuracy': 0.9481,
+                'accuracy': 0.9680,
                 'feature_names': ['gender', 'age', 'hypertension', 'heart_disease', 'ever_married',
                                 'work_type', 'Residence_type', 'avg_glucose_level', 'bmi', 'smoking_status']
             }
@@ -531,8 +531,8 @@ def show_stroke_form(models):
     st.info("ℹ️ Enter patient demographic and clinical information for stroke risk prediction.")
     
     st.success("""
-    ✅ **Model Update (SMOTE-Balanced)**: This model uses SMOTE balancing to achieve **97.37% accuracy** 
-    with excellent recall (94.94%). However, smoking correlation in the source data is weak (1.05% difference). 
+    ✅ **Model Update (SMOTE-Balanced)**: This model uses SMOTE balancing to achieve **96.80% accuracy** 
+    with excellent recall (97.11%). However, smoking correlation in the source data is weak (1.05% difference). 
     Model is technically sound but reflects data quality limitations. **Always consult healthcare professionals.**
     """)
     
@@ -929,13 +929,13 @@ def show_about_page():
     - **Source**: Cleveland Heart Disease Database
     - **Accuracy**: ~87%
     
-    ### Stroke Dataset (5,110 → 9,690 samples with SMOTE)
+    ### Stroke Dataset (5,110 → 9,696 samples with SMOTE)
     - **Features**: Age, Gender, BMI, Glucose Level, Smoking Status, etc.
     - **Target**: Stroke occurrence (0/1)
     - **Source**: Healthcare Dataset Stroke Data
-    - **Original**: 5,110 samples with severe imbalance (18.28:1 ratio)
-    - **After SMOTE**: 9,690 balanced samples (1:1 ratio)
-    - **Accuracy**: 97.37%
+    - **Original**: 5,110 samples with severe imbalance (19.52:1 ratio)
+    - **After SMOTE**: 9,696 balanced samples (1:1 ratio)
+    - **Accuracy**: 96.80%
     - **⚠️ Known Limitation**: While SMOTE fixed class imbalance and achieved excellent metrics,
       weak smoking correlation in the original dataset (1.05% difference) persists. The model is
       technically sound but reflects data quality limitations.
@@ -943,16 +943,16 @@ def show_about_page():
     ## 🎯 Performance Metrics
     
     The system achieves the following performance levels:
-    - **Diabetes**: 78.21% accuracy (Well-balanced dataset: 2.02:1 ratio)
+    - **Diabetes**: 78.21% accuracy (Moderate dataset: 1.87:1 ratio)
     - **Heart Disease**: 86.89% accuracy (Well-balanced dataset: 1.18:1 ratio)
-    - **Stroke**: 97.37% accuracy (SMOTE-balanced: 1:1 ratio, ROC-AUC: 0.9896)
+    - **Stroke**: 96.80% accuracy (SMOTE-balanced: 1:1 ratio, ROC-AUC: 0.9956)
     
     ### Key Performance Indicators
     - **Accuracy**: Overall correct predictions
     - **Precision**: Ability to correctly identify positive cases
-    - **Recall**: Ability to find all positive cases (Stroke model: 94.94%)
-    - **F1-Score**: Balance between precision and recall (Stroke model: 0.973)
-    - **ROC-AUC**: Model's ability to distinguish between classes (Stroke model: 0.9896)
+    - **Recall**: Ability to find all positive cases (Stroke model: 97.11%)
+    - **F1-Score**: Balance between precision and recall (Stroke model: 0.9681)
+    - **ROC-AUC**: Model's ability to distinguish between classes (Stroke model: 0.9956)
     
     ## ⚠️ Important Disclaimers
     
@@ -971,19 +971,19 @@ def show_about_page():
     ### The Solution: SMOTE (Synthetic Minority Over-sampling Technique)
     
     **Technical Implementation:**
-    - Applied SMOTE to balance dataset from **5,110 → 9,690 samples**
-    - Achieved perfect **1:1 class balance** (4,845 per class)
+    - Applied SMOTE to balance dataset from **5,110 → 9,696 samples**
+    - Achieved perfect **1:1 class balance** (4,848 per class)
     - Installed `imbalanced-learn` library with automated detection (triggers when ratio >3:1)
     
     **Results:**
-    - **Accuracy**: 94.81% → **97.37%**
-    - **ROC-AUC**: 0.69 → **0.9896**
-    - **Recall**: 0% → **94.94%** (Model now predicts stroke class!)
-    - **Precision**: N/A → **99.78%**
+    - **Accuracy**: 94.81% → **96.80%**
+    - **ROC-AUC**: 0.69 → **0.9956**
+    - **Recall**: 0% → **97.11%** (Model now predicts stroke class!)
+    - **Precision**: N/A → **96.52%**
     
     ### Key Lesson: "You can't fix bad data with better algorithms"
     
-    Despite excellent technical metrics (97.37% accuracy), **smoking paradox persists**: the model 
+    Despite excellent technical metrics (96.80% accuracy), **smoking paradox persists**: the model 
     predicts *lower* risk for smokers vs non-smokers. This is NOT a bug—it's the actual pattern 
     in the dataset (only 1.05% difference: 6.30% vs 5.25% stroke rate).
     
@@ -1027,9 +1027,9 @@ def show_about_page():
     with col2:
         st.metric("Total Features", "31")
     with col3:
-        st.metric("Training Samples", "10,380", delta="+4,199 SMOTE")
+        st.metric("Training Samples", "10,386", delta="+4,586 SMOTE")
     with col4:
-        st.metric("Best Accuracy", "97.37%", delta="+2.56%")
+        st.metric("Best Accuracy", "96.80%", delta="+1.99%")
 
 if __name__ == "__main__":
     main()
