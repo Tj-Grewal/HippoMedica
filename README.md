@@ -18,6 +18,12 @@ Interface: Web-based dashboard
 **Humanitarian Impact**: Early intervention could save thousands of lives annually and reduce healthcare disparities
 **Academic Impact**: More people contributing to datasets means better models for the future
 
+#### How to run
+**How-to-guide**: Contains the step by step details on how to run this project locally
+**TLDR**: 
+   - Run the `run_pipeline.py` file inside the `pipeline` folder
+   - Start the web server by running `streamlit run .\app.py` in the `web_app` folder 
+
 ### AI Techniques (Multiple Integrated Methods)
 **Core ML Pipeline**
 1. Ensemble Learning
