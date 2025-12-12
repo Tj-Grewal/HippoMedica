@@ -7,7 +7,14 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from pathlib import Path
 import warnings
+import os
 warnings.filterwarnings('ignore')
+
+# Get the base directory of the project
+BASE_DIR = Path(__file__).parent.parent  # Go up from web_app to project root
+DATASETS_DIR = BASE_DIR / 'datasets' / 'raw'
+MODELS_DIR = BASE_DIR / 'models' / 'trained_models'
+SCALERS_DIR = BASE_DIR / 'models' / 'scalers'
 
 # Page configuration
 st.set_page_config(
@@ -65,20 +72,20 @@ def load_datasets():
         datasets = {}
         
         # Load diabetes dataset
-        diabetes_df = pd.read_csv('../datasets/raw/diabetes.csv')
+        diabetes_df = pd.read_csv(DATASETS_DIR / 'diabetes.csv')
         if 'Outcome' not in diabetes_df.columns and len(diabetes_df.columns) == 9:
             diabetes_df.columns = ['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 
                                   'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age', 'Outcome']
         datasets['diabetes'] = diabetes_df
         
         # Load heart disease dataset
-        heart_df = pd.read_csv('../datasets/raw/heart.csv')
+        heart_df = pd.read_csv(DATASETS_DIR / 'heart.csv')
         if 'target' in heart_df.columns:
             heart_df['target'] = (heart_df['target'] > 0).astype(int)
         datasets['heart'] = heart_df
         
         # Load stroke dataset
-        stroke_df = pd.read_csv('../datasets/raw/healthcare-dataset-stroke-data.csv')
+        stroke_df = pd.read_csv(DATASETS_DIR / 'healthcare-dataset-stroke-data.csv')
         datasets['stroke'] = stroke_df
         
         return datasets
@@ -90,31 +97,28 @@ def load_datasets():
 def load_trained_models():
     """Load pre-trained models and scalers."""
     try:
-        models_dir = Path('../models/trained_models')
-        scalers_dir = Path('../models/scalers')
-        
-        if not models_dir.exists():
+        if not MODELS_DIR.exists():
             st.error("Models directory not found. Please run the pipeline first.")
             return None
         
         models = {
             'diabetes': {
-                'model': joblib.load(models_dir / 'diabetes_random_forest.pkl'),
-                'scaler': joblib.load(scalers_dir / 'diabetes_scaler.pkl'),
+                'model': joblib.load(MODELS_DIR / 'diabetes_random_forest.pkl'),
+                'scaler': joblib.load(SCALERS_DIR / 'diabetes_scaler.pkl'),
                 'accuracy': 0.7821,
                 'feature_names': ['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 
                                 'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age']
             },
             'heart': {
-                'model': joblib.load(models_dir / 'heart_disease_random_forest.pkl'),
-                'scaler': joblib.load(scalers_dir / 'heart_disease_scaler.pkl'),
+                'model': joblib.load(MODELS_DIR / 'heart_disease_random_forest.pkl'),
+                'scaler': joblib.load(SCALERS_DIR / 'heart_disease_scaler.pkl'),
                 'accuracy': 0.8689,
                 'feature_names': ['age', 'sex', 'cp', 'trestbps', 'chol', 'fbs', 'restecg', 
                                 'thalach', 'exang', 'oldpeak', 'slope', 'ca', 'thal']
             },
             'stroke': {
-                'model': joblib.load(models_dir / 'stroke_random_forest.pkl'),
-                'scaler': joblib.load(scalers_dir / 'stroke_scaler.pkl'),
+                'model': joblib.load(MODELS_DIR / 'stroke_random_forest.pkl'),
+                'scaler': joblib.load(SCALERS_DIR / 'stroke_scaler.pkl'),
                 'accuracy': 0.9680,
                 'feature_names': ['gender', 'age', 'hypertension', 'heart_disease', 'ever_married',
                                 'work_type', 'Residence_type', 'avg_glucose_level', 'bmi', 'smoking_status']
